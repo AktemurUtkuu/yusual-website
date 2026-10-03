@@ -1,3 +1,7 @@
+/* =========================================================
+   TEMA DEĞİŞKENLERİ
+   Sitede tekrar kullanılan renk, yazı tipi, köşe ve gölge değerleri.
+   ========================================================= */
 :root {
   --canvas: #040506;
   --card: #07080a;
@@ -26,6 +30,10 @@
   text-rendering: optimizeLegibility;
 }
 
+/* =========================================================
+   GENEL SIFIRLAMA VE SAYFA TEMELİ
+   Tüm elemanların kutu hesabı, sayfa zemini ve genel bağlantı davranışları.
+   ========================================================= */
 *,
 *::before,
 *::after {
@@ -56,6 +64,10 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* =========================================================
+   SABİT ARKA PLAN EFEKTLERİ
+   Sayfanın arkasındaki yeşil ışık, ızgara ve gren dokusu.
+   ========================================================= */
 .background,
 .hero-light,
 .hero-grid,
@@ -108,6 +120,10 @@ a {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* =========================================================
+   ANA İÇERİK KAPSAYICISI
+   Profil bilgileri ve bağlantıların bulunduğu ortalanmış ana sütun.
+   ========================================================= */
 .profile-card {
   position: relative;
   z-index: 1;
@@ -116,6 +132,10 @@ a {
   margin-inline: auto;
 }
 
+/* =========================================================
+   PROFİL BAŞLIĞI
+   Profil fotoğrafı, çevrimiçi noktası, unvan, kullanıcı adı ve açıklama.
+   ========================================================= */
 .profile-header {
   display: flex;
   flex-direction: column;
@@ -183,23 +203,31 @@ h1 {
 }
 
 .tagline {
-  max-width: 320px;
+  max-width: 330px;
   margin-bottom: 36px;
   color: var(--text-secondary);
   font-size: 0.9rem;
   line-height: 1.55;
 }
 
+/* =========================================================
+   KICK BÖLÜM BAŞLIĞI
+   Yeşil Kick butonunun hemen üstündeki davet metni.
+   ========================================================= */
 .primary-action h2 {
   margin-bottom: 12px;
   color: var(--text-secondary);
-  font-size: 0.75rem;
+  font-size: 0.90rem;
   font-weight: 500;
   line-height: 1.45;
   letter-spacing: 0.035em;
   text-align: center;
 }
 
+/* =========================================================
+   ORTAK BAĞLANTI KARTI YAPISI
+   Kick butonu ile sosyal medya kartlarının ortak yerleşimi ve geçişleri.
+   ========================================================= */
 .kick-button,
 .social-link {
   position: relative;
@@ -263,12 +291,17 @@ h1 {
   transition: background-position 500ms ease, opacity 220ms ease;
 }
 
+/* Kart içeriklerini parlama katmanlarının üzerinde tutar. */
 .kick-button > *,
 .social-link > * {
   position: relative;
   z-index: 1;
 }
 
+/* =========================================================
+   KICK ANA ÇAĞRI BUTONU
+   Yeşil kanal bağlantısı, KICK rozeti, yazıları ve sağ ok simgesi.
+   ========================================================= */
 .kick-button {
   --accent: var(--kick);
   --accent-soft: rgba(83, 252, 24, 0.24);
@@ -353,6 +386,10 @@ h1 {
   transition: transform 160ms ease, opacity 160ms ease;
 }
 
+/* =========================================================
+   SOSYAL MEDYA BAĞLANTILARI
+   Instagram, TikTok, YouTube, X ve Discord kartlarının listesi.
+   ========================================================= */
 .social-links {
   display: grid;
   gap: 10px;
@@ -375,6 +412,7 @@ h1 {
     0 10px 28px rgba(0, 0, 0, 0.24);
 }
 
+/* Her sosyal ağ için hover sırasında kullanılan vurgu renkleri. */
 .social-link--instagram {
   --accent: #ff4f8b;
   --accent-soft: rgba(255, 79, 139, 0.18);
@@ -428,6 +466,10 @@ h1 {
   color: var(--text-secondary);
 }
 
+/* =========================================================
+   ETKİLEŞİM DURUMLARI
+   Kick ve sosyal bağlantıların hover, tıklama ve klavye odağı efektleri.
+   ========================================================= */
 .kick-button:hover,
 .social-link:hover {
   transform: translateY(-1px);
@@ -512,6 +554,10 @@ h1 {
   outline-offset: 4px;
 }
 
+/* =========================================================
+   ALT BİLGİ
+   Sayfanın altındaki "Yusual | Kick yayıncısı" satırı.
+   ========================================================= */
 footer {
   padding-top: 32px;
   color: var(--text-muted);
@@ -535,6 +581,10 @@ footer i {
   font-style: normal;
 }
 
+/* =========================================================
+   KICK YÖNLENDİRME SAYFASI
+   kick-web.html içindeki ortalanmış bilgilendirme kartı ve butonu.
+   ========================================================= */
 .redirect-page {
   display: grid;
   place-items: center;
@@ -583,6 +633,10 @@ footer i {
   text-align: left;
 }
 
+/* =========================================================
+   MOBİL UYUMLULUK
+   480 px ve altındaki ekranlarda boşlukları ve eleman boyutlarını küçültür.
+   ========================================================= */
 @media (max-width: 480px) {
   body {
     padding: max(36px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -607,6 +661,10 @@ footer i {
   }
 }
 
+/* =========================================================
+   ERİŞİLEBİLİRLİK: AZALTILMIŞ HAREKET
+   Sisteminde hareket azaltma açık olan kullanıcılar için animasyonları kapatır.
+   ========================================================= */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
